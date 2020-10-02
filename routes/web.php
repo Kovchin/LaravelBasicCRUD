@@ -22,3 +22,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::resource('basic', \App\Http\Controllers\BasicController::class);
+
+Route::resource('color', \App\Http\Controllers\ColorController::class);
