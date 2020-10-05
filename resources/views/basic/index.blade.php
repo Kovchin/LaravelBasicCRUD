@@ -19,20 +19,24 @@
         <th>Модифицировать</th>
         <th>Удалить</th>
     </tr>
-    @foreach($cars as $car)
-    <tr>
-        <td>{{$car->id}}</td>
-        <td><a href="basic\{{$car->id}}">{{$car->name}}</a></td>
-        <td><a href="basic\{{$car->id}}\edit">Изменить</a></td>
-        <td>
-            <form method="POST" action="\basic\{{$car->id}}">
-                @csrf
-                @method('DELETE')
 
-                <input type="submit" value="Удалить">
-            </form></td>
-    </tr>
+    @foreach($cars as $car)
+
+        <tr>
+            <td>{{$loop->iteration}}</td>
+            <td><a href="basic\{{$car->id}}">{{$car->name}}</a></td>
+            <td><a href="basic\{{$car->id}}\edit">Изменить</a></td>
+            <td>
+                <form method="POST" action="\basic\{{$car->id}}">
+                    @csrf
+                    @method('DELETE')
+
+                    <input type="submit" value="Удалить">
+                </form>
+            </td>
+        </tr>
     @endforeach
 </table>
+
 </body>
 </html>
